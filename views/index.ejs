@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="/css/semantic-ui.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="ui container">
+    <div class="ui text container">
+      <header class="ui three buttons">
+        <a href="/" class="ui button active">Page d'accueil</a>
+        <a href="/login" class="ui button">Connexion</a>
+
+        <% if(loggedIn) { %>
+        <a href="/dashboard" class="ui button">Dashboard</a>
+        <% } %>
+      </header>
+
+      <% if (banner.length > 0) { %>
+      <div class="ui message warning"><%= banner %></div>
+      <% } %>
+
+      <main>
+        <h1>S'enregistrer :</h1>
+
+        <form method="POST" action="/api/register" class="ui form">
+          <div class="field">
+            <label>Prénom</label>
+            <input type="text" name="firstName" placeholder="Prénom" value="<%= firstName %>" />
+          </div>
+
+          <div class="field">
+            <label>Nom</label>
+            <input type="text" name="lastName" placeholder="Nom" value="<%= lastName %>" />
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Email" value="<%= email %>" />
+          </div>
+
+          <div class="field">
+            <label>Mot de passe</label>
+            <input type="password" name="password" placeholder="Mot de passe" value="<%= password %>" />
+          </div>
+
+          <div class="field">
+            <label>Confirmer le mot de passe</label>
+            <input type="password" name="password2" placeholder="Confirmation mot de passe" />
+          </div>
+
+          <button type="submit" class="ui button primary">Soumettre</button>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

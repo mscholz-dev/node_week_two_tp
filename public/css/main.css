@@ -1,0 +1,19 @@
+.ui.container {
+  padding: 12px;
+}
+
+header.ui.three.buttons {
+  margin-bottom: 32px;
+}
+
+h1 {
+  margin-bottom: 32px;
+}
+
+form.ui.form {
+  padding: 0 32px;
+}
+
+button.ui.button.primary {
+  margin-top: 24px;
+}

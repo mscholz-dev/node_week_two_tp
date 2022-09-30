@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/semantic-ui.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="ui container">
+    <div class="ui text container">
+      <header class="ui three buttons">
+        <a href="/" class="ui button">Page d'accueil</a>
+        <a href="/login" class="ui button">Connexion</a>
+        <a href="/dashboard" class="ui button active">Dashboard</a>
+      </header>
+
+      <main>
+        <% if (banner.length > 0) { %>
+        <div class="ui message warning"><%= banner %></div>
+        <% } %>
+
+        <h1>Dashboard :</h1>
+
+        <p>Bon retour <%= user.firstName %> <%= user.lastName %></p>
+        <p>Un petit rappel de ton addresse email: <%= user.email %></p>
+
+        <a href="/api/logout">Se déconnecter</a>
+      </main>
+    </div>
+  </body>
+</html>
